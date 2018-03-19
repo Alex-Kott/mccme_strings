@@ -21,15 +21,35 @@ vector<string> split_for_delimeter(string& s, char delimiter)
   return tokens;
 }
 
+bool is_delimiter(char c, string delimiters){
+  for(int i = 0; i < delimiters.length(); i++){
+    if(c == delimiters[i]){
+      return true;
+    }
+  }
+  return false;
+}
+
 void split(string& s, string delimiters)
 {
-    vector<string> tokens;
+  vector<string> tokens;
+  string buffer;
+  int i = 0;
+  while(s){
+    if(!is_delimiter(s[i], delimiters)){
+      boofer = boofer + s[i];
 
-    for(int i =0; i<delimiters.length();i++){
-      // cout<<s<<' '<<delimiters[i]<<endl;
-      split_for_delimeter(s, delimiters[i]);
-      // tokens.push_back(split_for_delimeter(s, delimiters[i]));
+    } else {
+      boofer = "";
     }
+  }
+    
+
+    // for(int i =0; i<delimiters.length();i++){
+    //   // cout<<s<<' '<<delimiters[i]<<endl;
+    //   split_for_delimeter(s, delimiters[i]);
+    //   // tokens.push_back(split_for_delimeter(s, delimiters[i]));
+    // }
 
     // while (getline(tokenStream, token, delimiter)) {
     //   while
