@@ -17,15 +17,16 @@ int main()
     // cout<<(4+7)/2;
     // return 0;
     j+=1;
-    for(int k = i-1;k<(i+j)/2;k++){
+    for(int k = i-1;k<=(i+j)/2;k++){
         // cout<<k<<endl;
         char b=data[k];
-        data[k]=data[i+j-k];
-        data[i+j-k]=b;
+        cout<<b<<endl;
+        // data[k]=data[i+j-k];
+        // data[i+j-k]=b;
         // cout<<data[k]<<endl;
     }
 
-    cout<<data;
+    cout<<endl<<data;
 
     // string s = "";
 
