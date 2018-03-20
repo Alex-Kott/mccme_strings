@@ -9,12 +9,11 @@ bool check_palindrome(string phrase);
 
 int main()
 {
-    string data;
+    string data, phrase = "";
     ifstream input_file;
     input_file.open("input.txt");
 
     getline(input_file, data);
-    string phrase = "";
     phrase = filter_symbol(data, ' ');
     if (check_palindrome(phrase)) {
         cout << "yes";
@@ -30,9 +29,13 @@ int main()
 
 bool check_palindrome(string phrase)
 {
-    int len = phrase.length();
-    for (int i = 0; i < len; i++) {
-        if (phrase[i] != phrase[len - i - 1]) {
+    int len, i;
+
+    len = phrase.length();
+    for (i = 0; i < len; i++) 
+    {
+        if (phrase[i] != phrase[len - i - 1]) 
+        {
             return false;
         }
     }
@@ -41,9 +44,13 @@ bool check_palindrome(string phrase)
 
 string filter_symbol(string s, char symbol)
 {
+    int i;
     string buffer = "";
-    for (int i = 0; i < s.length(); i++) {
-        if (s[i] != symbol) {
+
+    for (i = 0; i < s.length(); i++) 
+    {
+        if (s[i] != symbol) 
+        {
             buffer += s[i];
         }
     }

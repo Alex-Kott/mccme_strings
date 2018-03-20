@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+    int i;
     string data;
     ifstream input_file;
     input_file.open("input.txt");
@@ -15,11 +16,13 @@ int main()
 
     string unique_characters = "";
 
-    for (int i = 0; i < data.length(); i++) {
+    for (i = 0; i < data.length(); i++) 
+    {
         if (unique_characters.find(data[i]) == string::npos) {
             unique_characters += data[i];
         }
-        else {
+        else 
+        {
             cout << data[i];
             return 0;
         }

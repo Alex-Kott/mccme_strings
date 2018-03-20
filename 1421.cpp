@@ -6,20 +6,23 @@ using namespace std;
 
 int main()
 {
-    string data;
+    string data, s="";
+    int i, len;
     ifstream input_file;
+
     input_file.open("input.txt");
 
     getline(input_file, data);
     input_file.close();
 
-    string s = "";
-
-    for (int i = 0; i < data.length(); i++) {
-        int len = s.length();
-        if ((s[len - 1] == ' ') and (data[i] == ' ')) {
+    for (i = 0; i < data.length(); i++) 
+    {
+        len = s.length();
+        if ((s[len - 1] == ' ') and (data[i] == ' ')) 
+        {
         }
-        else {
+        else 
+        {
             s += data[i];
         }
     }
