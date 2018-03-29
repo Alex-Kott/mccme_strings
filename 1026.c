@@ -61,15 +61,11 @@ int calc(char *MNML, int x){
         return 0;
     }
 
-    int i, j;
+    int i, j, n=1, p;
 
     printf("%s ", MNML);
     char *N = calloc(5, sizeof(char));
-    N[0] = '1';
-    N[1] = '\0';
     char *PWR = calloc(5, sizeof(char));
-    PWR[0] = '1';
-    PWR[1] = '\0';
     bool flag = true;
     for(i=0, j=0; i<strlen(MNML); i++){
         if(is_digit(MNML[i])){
@@ -82,11 +78,20 @@ int calc(char *MNML, int x){
             
         }else{
             N[j] = '\0';
+            // printf("%s\n", N);
+            if(flag){
+                n = (int)strtol(N, (char**)NULL, 10);
+            }
+
             flag = false;
             j=0;
         }
     }
-    printf("%i \n", (int)N);
+    // if(flag==true){
+    //     printf("%i\n", n);
+    //     return n;
+    // }
+    printf("%i\n", n);
     empty(N);
     empty(PWR);
     return 1;
